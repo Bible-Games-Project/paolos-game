@@ -74,3 +74,14 @@ the next sync; if a rule you are adding applies to every game, it belongs in
 bgp-admin at `templates/agent-docs/`, so ask before adding it.
 
 <!-- BGP-ADMIN:END -->
+
+## Project notes
+
+- The game is "¡Al Arca!" (Noah's ark catcher): a single self-contained
+  `index.html` with an inline `<canvas>` game, no framework and no runtime
+  dependencies. `bun run build` just copies it into `dist/`.
+- All art is canvas drawing plus emoji (pre-rendered to offscreen sprites);
+  all sound is generated with WebAudio. There are no asset files.
+- UI strings are Spanish (end-user facing); code and comments stay English.
+- To smoke-test without a browser, run the inline script in Node `vm` with a
+  stubbed canvas/window and drive `requestAnimationFrame` manually.
